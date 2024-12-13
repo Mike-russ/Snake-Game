@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1 class="title_text">Welcome to Snake Game!</h1>
+        <h2 class="title_text">Player 1 starts in the top left</h2>
+        <h2 class="title_text">Player 2 starts in the bottom right.</h2>
+        <h2 class="title_text" v-if="playerNumber !== null">You are player {{ playerNumber }}</h2>
+        <h2 class="title_text" v-else>Game is full, feel free to watch!</h2>
+        <p class="title_text">Use the arrow keys to move, get to the golden pellets to grow, be the last snake standing to win!</p>
+        <div id="game-board">
+            <div v-for="(row, rowIndex) in board" :key="rowIndex" class="row">
+                <div v-for="(cell, colIndex) in row" :key="colIndex" class="cell"
+                    :class="{
+                        'snake': isSnake(rowIndex, colIndex), // Check if the cell contains a snake
+                        'pellet': isPellet(rowIndex, colIndex) // Check if the cell contains a pellet
+                    }">
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    text-align: center;
+}
+
+#app {
+    background-image: linear-gradient(#00beff, #00e02d);
+    padding: 3px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+}
+
+.title_text {
+    margin-top: 20px;
+}
+
+#game-board {
+    margin-top: 20px;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.row {
+    display: flex;
+    gap: 1px;
+    justify-content: center; /* Center the cells horizontally */
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    opacity: .8;
+    border: 1px solid black;
+}
+
+.snake {
+    background-color: brown;
+}
+
+.pellet {
+    background-color: gold;
+}
